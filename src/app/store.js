@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { dessertReducer } from "./features/dessertsSlice";
+import dessertReducer from "./features/dessertsSlice";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     desserts: dessertReducer,
   },

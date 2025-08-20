@@ -113,3 +113,46 @@ img {
   object-fit: contain;
   display: flex;
 }
+
+.container {
+  display: flex;
+  gap: 3.2rem;
+  width: 100%;
+  max-width: 1216px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 8.8rem;
+  padding-bottom: 8.8rem;
+}
+
+.desserts {
+  width: 70%;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 3.2rem;
+  color: var(--color-rose-900);
+}
+
+.your-cart {
+  background-color: red;
+  /* flex-grow: 1; */
+  width: 100%;
+  width: 30%;
+}
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .desserts {
+    width: 100%;
+  }
+
+  .your-cart {
+    width: 100%;
+  }
+}
