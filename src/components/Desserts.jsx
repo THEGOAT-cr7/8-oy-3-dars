@@ -1,15 +1,19 @@
+import React from "react";
 import Cart from "./Cart";
 
-function Desserts({ desserts }) {
-    console.log(desserts);
+const Desserts = ({ desserts }) => {
+  console.log(desserts);
+
   return (
-    <div className="desserts">
+    <div className="desserts__container">
       <h1 className="title">Desserts</h1>
-      {desserts.map((dessert) => {
-        return <Cart key={dessert.id} dessert={dessert} />;
-      })}
+      <div className="desserts">
+        {desserts.map((dessert) => {
+          return <Cart key={dessert.id} dessert={dessert} />;
+        })}
+      </div>
     </div>
   );
-}
+};
 
 export default Desserts;

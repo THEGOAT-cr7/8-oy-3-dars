@@ -79,80 +79,146 @@
 
 body {
   font-family: "Red Hat Text", sans-serif;
-  font-size: var(--text-preset-3-size);
-  line-height: var(--text-preset-3-line-height);
-  font-weight: var(--text-preset-3-weiht);
   background-color: var(--color-rose-50);
+  line-height: var(--text-preset-3-line-height);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
 }
-
-*,
 *::after,
-::before {
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   height: 100%;
 }
-
 a {
   text-decoration: none;
   display: inline-block;
 }
-
-ul,
-ol {
+ol,
+ul {
   list-style: none;
 }
-
 img {
   object-fit: contain;
   display: flex;
+  width: 100%;
 }
 
 .container {
   display: flex;
-  gap: 3.2rem;
+  gap: 3.2em;
   width: 100%;
-  max-width: 1216px;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  max-width: 1276px;
+  /* padding-left: 3rem;
+  padding-right: 3rem; */
+  padding-top: 8.8em;
+  padding-bottom: 8.8em;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 8.8rem;
-  padding-bottom: 8.8rem;
 }
 
 .desserts {
-  width: 70%;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 2.4rem;
+  row-gap: 3.2rem;
 }
-
 .title {
-  font-size: 4rem;
-  margin-bottom: 3.2rem;
+  font-style: 4rem;
+  margin-bottom: 3.2em;
   color: var(--color-rose-900);
 }
-
 .your-cart {
-  background-color: red;
-  /* flex-grow: 1; */
-  width: 100%;
   width: 30%;
 }
+.desserts__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  border-radius: 0.8rem;
+}
+.card__btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+.card__add__to {
+  display: flex;
+  align-items: center;
+  width: 160px;
+  background-color: #fff;
+  border-radius: 999px;
+  border: 1px solid var(--color-rose-400);
+  cursor: pointer;
+  padding: 1.1rem 2.8rem;
+  font-family: inherit;
+  margin-top: -22px;
+
+  span {
+    flex-shrink: 0;
+    font-weight: 600;
+    font-size: var(--text-preset-4-bold-size);
+  }
+}
+.card__body {
+}
+
+.card__btns__amount {
+  background-color: var(--color-red);
+  width: 160px;
+  display: flex;
+  padding: 1.1rem 2.8rem;
+  justify-content: space-between;
+  border-radius: 999px;
+  margin-top: -22px;
+  color: #fff;
+  align-items: center;
+}
+.card__btn__amount {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  border: 1px solid var(--color-white);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    background-color: var(--color-white);
+  }
+  &:active svg path {
+    fill: var(--color-red);
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     flex-direction: column;
   }
-
   .desserts {
     width: 100%;
   }
-
   .your-cart {
     width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .dessert {
+    row-gap: 2.4rem;
   }
 }
